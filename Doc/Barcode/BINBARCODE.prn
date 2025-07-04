@@ -1,0 +1,9 @@
+<xpml><page quantity='0' pitch='20.0 mm'></xpml>AZ
+AA1V00160H0167Z
+AA3V+000H+000Z
+<xpml></page></xpml><xpml><page quantity='1' pitch='20.0 mm'></xpml>A%2H154V135
+2D30,L,05,1,0
+DN000{VAR1LEN},{VAR1}
+Q1
+Z
+<xpml></page></xpml><xpml><end/></xpml>

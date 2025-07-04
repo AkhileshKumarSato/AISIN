@@ -1,0 +1,7 @@
+**************************ASIN TO DO POINT ************************************
+1.First five lines process will be in pc.
+2.Rest all Lines process will be through AEP.
+3.First we need to know how the process will work means this all line process connected to each other or will be seprate.
+4.Each module having seprate kaan baan barcode for each lines and it will be scan first and get the part code pack size.
+5.Second will be scan part which will present in bin till pack size completed then print the BIN BARCODE.
+6.

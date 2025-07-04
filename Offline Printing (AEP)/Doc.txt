@@ -1,0 +1,13 @@
+XXXYZZZZZZZZZZZDDMMYY00000 (without space)
+
+ 
+
+Company Name XXX: AHL  (3 Digit)
+
+Line Number of Bar code line Y: 1/2/3 (1 Digit)
+
+Part Number (11 Digit): 82610M76M01 (11 Digit)
+
+Date DDMMYY  (6 Digit)
+
+Serial Number:00000 (5 Digit)

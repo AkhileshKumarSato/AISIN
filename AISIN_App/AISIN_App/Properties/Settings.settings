@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AISIN_App.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PrinterName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SATO CL4NX (305 dpi)</Value>
+    </Setting>
+    <Setting Name="PLC_Used" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">No</Value>
+    </Setting>
+    <Setting Name="LineNo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="New_Page_Used" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">N</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

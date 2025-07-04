@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EDBD468-A767-4A43-B051-E2AB523BABB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AISIN_App</RootNamespace>
+    <AssemblyName>AISIN_App</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconfinder_Cart_ecommerce_shop_commerce_supermarket_trolley_shopping_1886549.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="SatoLib, Version=9.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SatoLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ClsGlobal.cs" />
+    <Compile Include="Classes\clsODBC.cs" />
+    <Compile Include="Classes\PrintBarcode.cs" />
+    <Compile Include="Dal\clsDB.cs" />
+    <Compile Include="Dal\Dal.cs" />
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\frmGroupMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\frmGroupMaster.designer.cs">
+      <DependentUpon>frmGroupMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\frmCustomerMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\frmCustomerMaster.designer.cs">
+      <DependentUpon>frmCustomerMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\frmLinePartMappingMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\frmLinePartMappingMaster.designer.cs">
+      <DependentUpon>frmLinePartMappingMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Common.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="ProcessForm\frmEndLinePartDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmEndLinePartDetails.designer.cs">
+      <DependentUpon>frmEndLinePartDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmDirectDispatchReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmDirectDispatchReport.designer.cs">
+      <DependentUpon>frmDirectDispatchReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmProcessWiseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmProcessWiseReport.designer.cs">
+      <DependentUpon>frmProcessWiseReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmProductionNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmProductionNew.designer.cs">
+      <DependentUpon>frmProductionNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmChildReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmChildReport.designer.cs">
+      <DependentUpon>frmChildReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmReport.designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmUploadPickList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmUploadPickList.designer.cs">
+      <DependentUpon>frmUploadPickList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\frmUserMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\frmUserMaster.designer.cs">
+      <DependentUpon>frmUserMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\frmPartMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\frmPartMaster.designer.cs">
+      <DependentUpon>frmPartMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\frmLineMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\frmLineMaster.designer.cs">
+      <DependentUpon>frmLineMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterForm\frmLocationMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterForm\frmLocationMaster.designer.cs">
+      <DependentUpon>frmLocationMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmReprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmReprint.designer.cs">
+      <DependentUpon>frmReprint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmProduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmProduction.designer.cs">
+      <DependentUpon>frmProduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessForm\frmLoadingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessForm\frmLoadingList.designer.cs">
+      <DependentUpon>frmLoadingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\frmGroupMaster.resx">
+      <DependentUpon>frmGroupMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\frmCustomerMaster.resx">
+      <DependentUpon>frmCustomerMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\frmLinePartMappingMaster.resx">
+      <DependentUpon>frmLinePartMappingMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmEndLinePartDetails.resx">
+      <DependentUpon>frmEndLinePartDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmDirectDispatchReport.resx">
+      <DependentUpon>frmDirectDispatchReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmProcessWiseReport.resx">
+      <DependentUpon>frmProcessWiseReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmProductionNew.resx">
+      <DependentUpon>frmProductionNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmChildReport.resx">
+      <DependentUpon>frmChildReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmUploadPickList.resx">
+      <DependentUpon>frmUploadPickList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\frmUserMaster.resx">
+      <DependentUpon>frmUserMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\frmPartMaster.resx">
+      <DependentUpon>frmPartMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\frmLineMaster.resx">
+      <DependentUpon>frmLineMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterForm\frmLocationMaster.resx">
+      <DependentUpon>frmLocationMaster.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmReprint.resx">
+      <DependentUpon>frmReprint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmProduction.resx">
+      <DependentUpon>frmProduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessForm\frmLoadingList.resx">
+      <DependentUpon>frmLoadingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1336028501_001_39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_arrow_right_1814085.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_arrow_right_1814085 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_arrow_right_18140851.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Save_1493294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_delete_326606.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\36983477-security-services-and-protection-concept-login-sign-in-concepts-businessman-offer-padlock-symbol-of-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transparent Barckground Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_change_password_63985.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_47_cart_shopping_shipping_item_store_4308034.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Profile01_928429.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_AB_testing_3380369.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iconfinder_Cart_ecommerce_shop_commerce_supermarket_trolley_shopping_1886549.ico" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\iconfinder_Checklist_clipboard_inventory_list_report_tasks_todo_1886533.png" />
+    <None Include="Resources\iconfinder_juice-pack_307358.png" />
+    <None Include="Resources\iconfinder_Arrow_doodle_32_3847924.png" />
+    <None Include="Resources\iconfinder_16-web_essential_3401834.png" />
+    <None Include="Resources\iconfinder_WebInSquare_1.5EXTENDED-19_2557852.png" />
+    <None Include="Resources\iconfinder_39-Minimize_2123874.png" />
+    <None Include="Resources\iconfinder_minus-remove-delete-minimize_2931142.png" />
+    <None Include="Resources\iconfinder_document-print_118913.png" />
+    <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ReportForm\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

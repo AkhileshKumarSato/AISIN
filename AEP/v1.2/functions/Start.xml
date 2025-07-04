@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<function name="Start" type=""><![CDATA[function()
+  -- Global variables
+  ServerIp = "10.80.20.7" --Store Server Ip For Api Access
+  --ServerIp="10.91.2.8"
+  AppVersion = "1.0"
+end
+]]></function>

@@ -1,0 +1,20 @@
+1.First user scan kanbaan barcode
+2.User scan part barcode
+3.Bin barcode print as per pack size after sacnning kanbaan and part barcode
+4.If user want to print partially bin barcode then user will click on Service Part/Frication button as per required.
+5.If user want to reject part code before compilation of bin then user will scan port code again
+6.Direct Dispatch only consider (FRACTION ,SERVICE_PART and without feeding bin)
+7.FG Picking consider only COMPLETE bin its mean feeding bin
+8.Loading list out only Direct Dispatch
+
+
+Today Work
+1.Service Part Done Status is pending
+2.Fraction Part done Status is pending
+3.Bin Barcode printing done Status is pending
+4.REJECTION WITH PART Done both part and bin
+5.REJECTION WITHOUT PART both part and bin
+
+Points
+2.We are not able to feed SERVICE PART and FRACTION PART bin also. But at time of picking required feeding
+1.why consider reject bin at time of picking

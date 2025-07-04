@@ -1,0 +1,49 @@
+create PROCEDURE [dbo].[Prc_GetProductionDataData] 
+(@LineNo varchar(50),@BinBarcode varchar(50),@IsBinBarcode bit)
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+	--When fetching data based on bin barcode
+    If(@IsBinBarcode = 'True')
+	Begin
+	    if exists(select 1 from Production where BinBarcode = @BinBarcode and Status=4 )
+		  begin
+			Select 'N' As ProductionId,'Bin Barcode ' + @BinBarcode +' has been rejected' As PartBarcode
+		end
+		--else if exists(select 1 from Production where BinBarcode = @BinBarcode and Status=1 )  --Added by Akhilesh on 16-01-2021 fraction should not be reject
+		--  begin
+		--	Select 'N' As ProductionId,'The ' + @BinBarcode +' bin is fraction (fraction should not be reject)' As PartBarcode 
+		--end
+		--else if exists(select 1 from Production where BinBarcode = @BinBarcode and Status=3 ) --Added by Akhilesh on 16-01-2021 Service Part should not be reject
+		--  begin
+		--	Select 'N' As ProductionId,'The ' + @BinBarcode +' bin is Service Part (Service Part should not be reject)' As PartBarcode
+		--end
+		else
+		begin
+		    Select Prod.ProductionId,Prod.Line_No,Prod.BackNo,Prod.StandardBinQty,Prod.ScanQty,isnull(ProdPart.PartBarcode,'') PartBarcode,KanBanBarcode,Prod.BinBarcode
+			From Production Prod left Join Production_PartDetails ProdPart 
+			On Prod.ProductionId =  ProdPart.ProductionId Where Prod.BinBarcode = @BinBarcode
+		end
+	End
+	Else -- Fetching data based on the kanban if is there any kanban without bin barcode 
+	Begin
+	--if exists(select 1  From Production Where Line_No = @LineNo And StandardBinQty > ScanQty 
+	--	And BinBarcode Is Null)
+	--	begin
+			--In case many Kanban is pending then fetch the first one
+			Declare @ProductionId numeric(18,0),@BackNo varchar(4),@KanBanBarcode varchar(max)
+			Declare @StandardBinQty int,@ScanQty int = 0
+			--Get the top 1 data
+			Select Top(1) @ProductionId = ProductionId,@BackNo =  BackNo,@KanBanBarcode = KanBanBarcode,
+			@StandardBinQty = StandardBinQty,@ScanQty = ScanQty 
+			From Production Where Line_No = @LineNo And StandardBinQty >= ScanQty 
+			 Order By ProductionId desc
+			--Return Data
+			Select @ProductionId As ProductionId,@BackNo As BackNo,@KanBanBarcode As KanBanBarcode,
+			@StandardBinQty As StandardBinQty,@ScanQty As ScanQty Where @ScanQty > 0
+			--Get Part Barcode details
+			Select PartBarcode From Production_PartDetails Where ProductionId = @ProductionId
+	  --end
+	End
+END

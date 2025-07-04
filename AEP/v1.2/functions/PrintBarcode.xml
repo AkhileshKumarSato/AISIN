@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<function name="PrintBarcode" type=""><![CDATA[function()
+	-- if resolver then return end -- for breaking loops/detecting in AEPWorks
+	-- write your code here..
+  if resolver then 
+    return json.encode("returns")
+  end  
+  
+  local Http_Status_Ok = 200
+  local StandardBinQty = 0 -- store the bin starndard qty
+  local backNo,sampleBoardBackNo=""
+  -- param1 - Title,param2 -  Starting Value(retain previous value),param3 - inputFormat,param4 - for AEP Works,param5 - use new value(true - yes,false -No)
+  local KanBanBarcode = sa.input("Scan Kanban Barcode-Ver: "..AppVersion,"","","",true)
+  --local KanbanDataTbl = sa.split(KanBanBarcode," ") -- split with space
+  -- get all no. of items in table
+  --local TableValueCount = table.maxn(KanbanDataTbl)
+  --sa.msg("BackNo 46 "..KanbanDataTbl[46])
+  --sa.msg("BackNo 45 "..KanbanDataTbl[45])
+  -- back no is on index 46 so check atleast length 46
+  KanBanBarcode=sa.trim(KanBanBarcode)
+  --sa.msg(string.len(KanBanBarcode))
+  if(string.len(KanBanBarcode)>250) then
+      sa.msg("Invalid kanban length "..tostring(KanBanBarcode))
+      sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+      return false
+  end
+  local http = require("socket.http") -- Loads the HTTP module
+  if(string.len(KanBanBarcode) >= 20) then
+    local responseData, statusCode = http.request("http://"..tostring(ServerIp).."/satoapi/api/service/GetBackNoDetails/" .. tostring(KanBanBarcode))
+     if(statusCode ~= Http_Status_Ok) then
+        sa.msg("Error Occured on server side, status code "..tostring(statusCode).." error message "..tostring(responseData))
+        sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+        return false
+      end
+      local jsonGetBackNo = json.decode(responseData)
+      -- if everything is fine from server side
+      if(jsonGetBackNo.Response == "Y") then
+        backNo = jsonGetBackNo.BackNo
+        if(string.len(backNo)~=4) then
+          sa.msg("Invalid backNo in kanban barcode "..tostring(BackNo))
+          sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+          return false
+        end
+         
+        StandardBinQty = jsonGetBackNo.StandardBinQty
+          
+      else
+         sa.msg("Error "..tostring(jsonGetBackNo.ErrorMessage))
+        sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+        return false
+      end
+    
+    
+    --local backNo = KanbanDataTbl[46] --fetch the back no --comented by dipak 15-01-21
+    --sa.msg("BackNo "..backNo)
+    if(string.len(backNo) == 4) then -- check back no legth, should be 4
+      --sa.msg("Valid back no length")
+      --sa.msg("BackNo Enter")
+       local SampleBoardBarcode = sa.input("Sample Board Barcode-For "..backNo,"","","",true)
+      --call api
+      local responseDataBK, statusCodeBK = http.request("http://"..tostring(ServerIp).."/satoapi/api/service/GetBackNoDetails/" .. tostring(SampleBoardBarcode))
+      --sa.msg("http://"..tostring(ServerIp).."/AEPApi/api/service/GetBackNoDetails/" .. tostring(backNo))
+      --sa.msg(statusCode)
+      if(statusCodeBK ~= Http_Status_Ok) then
+        sa.msg("Error Occured on server side, status code "..tostring(statusCodeBK).." error message "..tostring(responseDataBK))
+        sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+        return false
+      end
+      -- if everything is fine then decode json data
+      local jsonBackNoDetails = json.decode(responseDataBK)
+      -- if everything is fine from server side
+      if(jsonBackNoDetails.Response == "Y") then
+         --sa.msg("GET") 
+         sampleBoardBackNo = jsonBackNoDetails.BackNo
+       
+       
+        if(string.len(SampleBoardBarcode) >= 20) then
+            
+          --if back no is same then show qty otherwise show error
+          if(sampleBoardBackNo == backNo) then
+            --show standary bin qty, in case user want to change bin qty for fraction bin
+            local ScanQty = sa.input("Input Bin Qty. Max: "..StandardBinQty,StandardBinQty,"%u","",true) -- input unsigned intergar only
+            if ScanQty == "" or tonumber(ScanQty) == 0 then
+              sa.msg("Input Scan Qty")
+              sa.quantity(0)
+              return 
+            end
+            -- scan qty should not be greater than scan qty
+            if tonumber(StandardBinQty) >= tonumber(ScanQty) then --save data by calling api
+            -- api parameter api/service/SaveBin/{BackNo}/{StandardBinQty}/{ScanQty}/{KanbanBarcode}      
+              local ApiUrl = "http://"..tostring(ServerIp).."/satoapi/api/service/SaveBin/" ..tostring(backNo).. "/" ..tostring(StandardBinQty).. "/" ..tostring(ScanQty).. "/" ..tostring(KanBanBarcode)
+             -- sa.msg(backNo.."   "..KanBanBarcode)
+              local responseDataSave, statusCodeSave = http.request(ApiUrl)
+              if(statusCodeSave ~= Http_Status_Ok) then
+                sa.msg("Error Status:"..statusCodeSave)
+                sa.msg("Error message "..responseDataSave)
+                sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+                return false
+              end
+              -- if everything is fine then decode json data
+              local jsonProduction = json.decode(responseDataSave)
+              if(jsonProduction.Response == "Y") then
+                --set barcode data
+                Format.BARCODE.data = jsonProduction.BinBarcode
+                Format.BARCODE.value = Format.BARCODE.data 
+                --now print the data
+                sa.quantity(1) 
+                return true
+              else
+                sa.msg("Error: "..tostring(jsonProduction.ErrorMessage))
+                sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+                return false
+              end
+            else
+              sa.msg("Bin qty can not be greater than standard qty "..tostring(ScanQty))
+              sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+              return false
+            end
+          else
+            sa.msg("Back no does not match "..tostring(sampleBoardBackNo))
+            sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+            return false
+          end
+        else
+          sa.msg("Invalid SampleBoardBarcode length")
+          sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+          return false
+        end
+      else
+        sa.msg("Error "..tostring(jsonBackNoDetails.ErrorMessage))
+        sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+        return false
+      end
+    else
+      --sa.msg("BackNo Not Enter")
+      sa.msg("Invalid backNo in kanban barcode "..tostring(BackNo))
+      sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+      return false
+    end
+  else
+    sa.msg("Invalid Kanban Barcode length")
+    sa.quantity(0) -- this field is madatory otherwise input qty field will come automatically
+    return false
+  end
+ 
+  
+  
+   
+end
+]]></function>

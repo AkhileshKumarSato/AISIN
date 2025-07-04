@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ClientCommunicationApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="VendorCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">W008</Value>
+    </Setting>
+    <Setting Name="Line" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="ProductCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">43210M82S00-39M</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Sato@123</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

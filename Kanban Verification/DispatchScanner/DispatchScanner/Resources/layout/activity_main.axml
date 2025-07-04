@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:background="#E8E8EC">
+    <TextView
+        android:text="Scan AHL Kanban"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        />
+    <EditText
+        android:id="@+id/editDeliveryNo"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:singleLine="true"
+        
+       
+        android:imeOptions="actionGo|flagNoFullscreen"
+        android:layout_width="fill_parent" />
+    <TextView
+        android:text="Scan Customer kanban"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        />
+    <EditText
+        android:id="@+id/editTruckNo"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+		
+        android:singleLine="true"
+        
+        android:layout_width="fill_parent" />
+    <TextView
+        android:text="Frame No"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+       android:visibility="gone" />
+    <EditText
+        android:id="@+id/editFrameNo"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:visibility="gone"
+        android:maxLength="500"
+        android:singleLine="true"
+        android:imeOptions="actionGo|flagNoFullscreen"
+        android:layout_width="fill_parent" />
+   
+    <Button
+        android:layout_marginTop="30dp"
+        android:text="Clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnClear" />
+    <Button
+        android:text="Back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnExit" />
+
+  
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+        
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:gravity="center_horizontal">
+     <TextView
+        android:text="0"
+        android:textSize="@dimen/notification_large_icon_height"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/lblScanneCount" 
+        />
+  </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+        
+    android:orientation="horizontal"
+    android:layout_width="fill_parent">
+     <TextView
+        android:text="Response:"
+        android:textSize="27dp"
+        android:layout_marginRight="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/lblLastScan1" 
+        
+        />
+        <TextView
+        android:text="Success"
+        android:textSize="27dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/lblLastScan1" 
+        
+        />
+  </LinearLayout>
+  </LinearLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<format name="Format2" design_width="240" design_height="240">
+  <field name="BARCODE" vPos="20" hPos="69" fieldtype="barcode" barcode="qrcode" cellSize="6" value="17012012101016PART" formatter="return string.format(Field.format,Value)" />
+  <field name="F2" hPos="9" vPos="-45" fieldtype="text" lua="return PrintBarcode()" source="script" formatter="return string.format(Field.format,Value)" />
+</format>

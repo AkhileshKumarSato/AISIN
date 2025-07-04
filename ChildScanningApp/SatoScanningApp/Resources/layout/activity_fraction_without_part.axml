@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_width="fill_parent">
+		         					<include
+      layout="@layout/activity_header" />
+			
+			<LinearLayout
+				
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:padding="2dp"
+                        android:text="Scan New Bin"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+                    <EditText
+                        android:id="@+id/editBinBarcode"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+					android:hint="Scan Bin Barcode"
+                        android:background="@drawable/common_edittext"
+                   android:imeOptions="actionGo|flagNoFullscreen"
+     
+                        android:gravity="center_vertical"
+                       android:layout_weight="1.4"
+                        android:maxLength="18"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingStart="8dp"
+                        android:singleLine="true"
+					
+						android:textColor="@color/black"
+                        android:textSize="14dp" />
+                  
+ 
+                </LinearLayout>
+			
+			<LinearLayout
+				 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:padding="2dp"
+                        android:text="Standard Bin Qty."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+				
+						 <Button
+             android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.4"
+		android:theme="@style/MyButton"
+		android:textColor="@color/light_yellow"
+		android:background="@color/black"
+	
+		android:gravity="center"
+        android:id="@+id/btnStandardBinQty" 
+		android:text="0" 
+		      android:padding="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingStart="8dp"
+                        android:singleLine="true"
+                        android:textSize="18dp"/>
+                    
+                    
+                </LinearLayout>
+			<LinearLayout
+				 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:padding="2dp"
+                        android:text="Current Bin Qty."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+				
+						 <Button
+             android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.4"
+		android:theme="@style/MyButton"
+		android:textColor="@color/light_yellow"
+		android:background="@color/black"
+	
+		android:gravity="center"
+        android:id="@+id/btnCurrentBinQty" 
+		android:text="0" 
+		      android:padding="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingStart="8dp"
+                        android:singleLine="true"
+                        android:textSize="18dp"/>
+                    
+                    
+                </LinearLayout>
+			<LinearLayout
+				 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:padding="2dp"
+                        android:text="Scan Fraction Bin"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+                    <EditText
+                        android:id="@+id/editFractionBinBarcode"
+			
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.4"
+                        android:background="@drawable/common_edittext"
+                   android:imeOptions="actionGo|flagNoFullscreen"
+                       
+                        android:gravity="center_vertical"
+                       
+                        android:maxLength="18"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingStart="8dp"
+                        android:singleLine="true"
+                        android:textSize="14dp" />
+                    
+                </LinearLayout>
+			<LinearLayout
+				 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight=".6"
+                        android:padding="2dp"
+                        android:text="Pick Qty."
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+                    <EditText
+                        android:id="@+id/editPickQty"
+			
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1.4"
+                        android:background="@drawable/common_edittext"
+                   android:imeOptions="actionGo|flagNoFullscreen"
+                       android:inputType="number"
+                        android:gravity="center_vertical"
+                       
+                        android:maxLength="50"
+                        android:maxLines="1"
+                        android:padding="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingStart="8dp"
+                        android:singleLine="true"
+                        android:textSize="14dp" />
+                    
+                </LinearLayout>
+			<LinearLayout  android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="15dp">
+            
+			 <Button
+					android:theme="@style/MyButton"
+				android:textColor="@color/white"
+					android:layout_weight="1"
+				
+        android:text="Save"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"	
+				android:layout_marginTop="20dp"
+        android:id="@+id/btnSave" />
+					 <Button
+					android:theme="@style/MyButton"
+				android:textColor="@color/white"
+					android:layout_weight="1"
+				
+        android:text="Reset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"	
+				android:layout_marginTop="20dp"
+        android:id="@+id/btnReset" />
+                </LinearLayout>
+
+
+	       
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

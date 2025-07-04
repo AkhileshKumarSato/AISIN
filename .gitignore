@@ -1,0 +1,118 @@
+## Ignore Visual Studio temporary files, build results, and user-specific files
+
+# User-specific files
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+# Visual Studio 2022 generated files
+Generated_Code/
+
+# .NET Core / .NET 5/6/7/8 generated files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Include if you use ASP.NET Core
+wwwroot/node_modules/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+# Ignore Rider IDE files
+.idea/
+
+# Ignore JetBrains IDE files
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Ignore files from code coverage tools
+*.coverage
+*.coveragexml
+
+# StyleCop generated files
+StyleCopReport.xml
+
+# User-specific files
+*.sdf
+*.dbmdl
+*.pdb
+*.cache
+*.ilk
+
+# SQL Server database files
+*.mdf
+*.ldf
+
+# Local test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+
+# SonarQube
+.sonar/
+
+# DotCover
+.idea/
+*.dotCover
+
+# Web publishing
+.publish/
+*.Publish.xml
+
+# Others
+*.orig
+
+# Backup & hidden files
+*~
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# VS Code workspace settings
+*.code-workspace
+
+# Mac system files
+.DS_Store
+
+# Node modules (if using Node.js in your project)
+node_modules/
+
+# Python virtual environments (if used)
+.venv/
+env/
+venv/
+
+# Logs
+*.log
+
+# Ignore sensitive files (customize based on your project)
+appsettings.*.json
+secrets.json

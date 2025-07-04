@@ -1,0 +1,4 @@
+1.KAANBAAN Can be reuse when binbarcode printed?
+2.Why use thread sleep 1000 for time?
+3.what is use of scanning binbarcode in kaanbaan textbox?
+4.Service Part and next button not working?

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<format name="Format2" design_width="288" design_height="288">
+  <field name="QR" vPos="36" hPos="4" fieldtype="barcode" barcode="qrcode" cellSize="7" value="text" formatter="return string.format(Field.format,Value)" />
+  <field name="MODELNAME" hPos="362" vPos="223" fieldtype="text" font="SATO0BC.ttf" size="5" value="89019M62S01" formatter="return string.format(Field.format,Value)" />
+  <field name="BARCODE" hPos="378" vPos="92" fieldtype="text" dir="270" font="SatoSansBold.ttf" size="5" value="text" formatter="return string.format(Field.format,Value)" />
+  <field name="F1" hPos="-13" vPos="317" fieldtype="text" lua="return ReadData()" source="script" formatter="return string.format(Field.format,Value)" />
+</format>

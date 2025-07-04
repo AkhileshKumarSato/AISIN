@@ -1,0 +1,44 @@
+AIGSYSGL292   LJ10  LJAS0012   LJ       0423601-13110          SE6000   LJ       -IL51----  0       E127 0000032000000000000093                                0                              0000032                  PCS      
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0423130-11841-BD3          SE4000   LJ        -----  0       E345 0000008000000000001418                                0                              0000008                  PCS     
+
+AIGSYSGL292   LJ10  LJAS0012   LJ       0423602-13100-200          SE6000   LJ       -IM19----  0       E126 0000032000000000007355                                0                              0000032                  PCS   
+
+AIGSYSGL292   LJ10  LJSE1100   LJ       0416210-12500          SE1000   LJ        -----  0       Y809 0000124000000000000001                                1                              0000124         XXXXXXXXXPCS    
+
+AIGSYSGL292   LJ10  LJAS0007   LJ       0425110-17120-T1          SE3000   LJ       FL59  0       B209 0000030000000000002812                                0                              0000030                  PCS     
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0423120-10751-BD3          SE4000   LJ       X XXXX  0       E332 0000012000000000003178                                0                              0000012                  PCS    
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       423110-14001-JE2          SE4000   LJ       X XXXX  0       E643 0000012000000000000144                                0                              0000012                  PCS    
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       423120-10751-BDU          SE4000   LJ       X XXXX  0       E642 0000012000000000003272                                0                              0000012                  PCS  
+
+AIGSYSGL292   LJ10  LJAS0103   LJ        423110-14001-FDE         SE4000   LJ       X XXXX  0       E649 0000012000000000000063                                0                              0000012                  PCS     
+
+AIGSYSGL292   LJ10  LJSE1100   LJ       0416210-12270          SE1000   LJ       ---------  0       Y901 0000060000000000000001                                1                              0000060         ---------PCS   
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0423110-14091-DDX          SE4000   LJ       XXXXXXXXX  0       E633 0000012000000000002463                                0                              0000012                  PCS   
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0484170-11530-DDX          SE4000   LJ       X XXXX  0       E609 0000012000000000000747                                0                              0000012                  PCS    
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0423110-14091-JE2          SE4000   LJ       XXXXXXXXX  0       E631 0000012000000000002032                                0                              0000012                  PCS   
+
+AIGSYSGL292   LJ10  LJAS0012   LJ       0423602-13100-200          SE6000   LJ       -IM19----  0       E126 0000032000000000007357                                0                              0000032                  PCS   
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0484170-11540-FDE          SE4000   LJ       X XXXX  0       E627 0000012000000000000051                                0                              0000012                  PCS  
+
+AIGSYSGL292   LJ10  LJAS0007   LJ       0425110-17450          SE3000   LJ       -IL44----  0       B205 0000030000000000006550                                0                              0000030                  PCS    
+
+AIGSYSGL292   LJ10  LJAS0007   LJ       0425110-17130-T1          SE3000   LJ       -IL10----  0       B207 0000030000000000008627                                0                              0000030                  PCS   
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       423120-13991-BDU          SE4000   LJ       X XXXX  0       E630 0000012000000000000249                                0                              0000012                  PCS  
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0423120-13991-BD3          SE4000   LJ       X XXXX  0       E318 0000012000000000000246                                0                              0000012                  PCS  
+
+AIGSYSGL292   LJ10  LJAS0103   LJ       0423110-14091-BDU          SE4000   LJ       X XXXX  0       E629 0000012000000000003227                                0                              0000012                  PCS    
+
+AIGSYSGL292   LJ10  LJAS0003   LJ       0411340-16082          SE1000   LJ       X XXXX  0       Y132 0000012000000000000017                                0                              0000012                  PCS    
+
+AIGSYSGL292   LJ10  LJAS0012   LJ       0423601-13110          SE6000   LJ       -IL51----  0       E127 0000032000000000000092                                0                              0000032                  PCS     
+    
