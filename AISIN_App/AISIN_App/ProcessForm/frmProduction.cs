@@ -914,6 +914,7 @@ namespace AISIN_App
                     return;
                 }
 
+
                 if (txtKanbanBarcode.Text.Trim() != txtReKanbanBarcode.Text.Trim())
                 {
                     _obj.LogMessage(EventNotice.EventTypes.evtInfo,
